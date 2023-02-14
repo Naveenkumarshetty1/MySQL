@@ -1,5 +1,14 @@
 CREATE USER 'remoteFox'@'localhost' IDENTIFIED BY 'TGL_P4ss!' ;
-GRANT ALL PRIVILEGES  ON . TO 'remoteFox'@'localhost';
+GRANT ALL PRIVILEGES  ON *.* TO 'remoteFox'@'localhost';
 CREATE USER 'remoteFox'@'%' IDENTIFIED BY 'TGL_P4ss!' ;
-GRANT ALL PRIVILEGES  ON . TO 'remoteFox'@'%';
+GRANT ALL PRIVILEGES  ON *.* TO 'remoteFox'@'%';
 
+
+######################################################################
+remoteFox =db_user 
+TGL_P4ss = strong pwd 
+######################################################################
+Apache installation
+PHP 8 version
+MySQL latest version
+SMTP
