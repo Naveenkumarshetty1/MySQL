@@ -1,0 +1,5 @@
+CREATE USER 'remoteFox'@'localhost' IDENTIFIED BY 'TGL_P4ss!' ;
+GRANT ALL PRIVILEGES  ON . TO 'remoteFox'@'localhost';
+CREATE USER 'remoteFox'@'%' IDENTIFIED BY 'TGL_P4ss!' ;
+GRANT ALL PRIVILEGES  ON . TO 'remoteFox'@'%';
+
