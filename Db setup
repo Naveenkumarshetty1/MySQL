@@ -1,0 +1,113 @@
+   DB case sensitive
+
+   apt update -y
+   apt  install mysql-server -y
+   sudo service mysql stop
+   sudo service mysql start
+   apt remove --purge mysql*
+   apt purge mysql*
+   apt autoremove -y
+   apt autoclean
+   apt remove dbconfig-mysql
+   apt install mysql-server
+   service mysql status
+   service mysql stop
+   sudo rm -rf /var/lib/mysql
+   mkdir /var/lib/mysql
+   sudo chown mysql:mysql /var/lib/mysql
+   sudo chmod 700 /var/lib/mysql
+   nano /etc/mysql/mysql.conf.d/mysqld.cnf
+   sudo mysqld --defaults-file=/etc/mysql/my.cnf --initialize --lower_case_table_names=1 --user=mysql --console
+   sudo service mysql start
+   sudo service mysql status
+   sudo grep 'temporary password' /var/log/mysql/error.log
+   mysql -u root -p 
+
+
+
+User Creation
+
+ALTER USER ‘remoteFox’@'localhost' IDENTIFIED BY 'TGL_P4ss!';
+create root pwd:- ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Cl@ahSt@geMysQ!';
+
+Create new user:- CREATE USER ‘remoteFox’@'localhost' IDENTIFIED BY 'TGL_P4ss!' ;
+
+CREATE USER ‘ehc_admin’@'localhost' IDENTIFIED BY 'vY7uJ3nO9lU8zD9c' ;
+
+Provide privileges to user:- GRANT ALL PRIVILEGES  ON *.* TO ‘remoteFox’@'localhost';
+
+To access from outside:- 
+
+CREATE USER 'pmo'@'%' IDENTIFIED BY 'pm0@Dm!n';
+GRANT ALL PRIVILEGES  ON *.* TO 'pmo'@'%';
+
+FLUSH PRIVILEGES;
+
+
+
+
+
+
+
+Backup
+
+mysqldump -u user_name -p database_name > file_name.sql --column-statistics=0
+
+mysql -u user_name -p database_name < file_name.sql
+
+
+https://stackoverflow.com/questions/51803216/lower-case-table-names-settings-in-mysql-8-0-12
+
+
+
+ cd var/lib/mysql
+    ls
+  cp -r * /data/
+  cd /data/
+  ls
+  cd
+  cd /var/lib/
+  ll | grep mysql
+  cd  /data
+  chmod 700 /data
+  chown  -R mysql:mysql /data/
+  cd
+  cd /etc/mysql/mysql.conf.d/
+  ls
+  nano mysqld.cnf 
+  cd /var/run/mysqld/
+  ls
+  ll
+  service  mysql stop
+  ll
+  service mysql start
+  systemctl stop mysql.service 
+  systemctl start mysql.service 
+  systemctl status mysql.service 
+  ls
+  cd
+  ls
+  mysql
+  mysql -u root -p 
+  cat /etc/mysql/mysql.conf.d/mysql.cnf 
+  cat /etc/mysql/mysql.conf.d/mysqld.cnf 
+  cd /data/
+  ls
+  cd mysql/
+  ls
+  cd
+  tail -f /var/log/mysql/error.log 
+  history 
+
+
+
+To reset mysql root password:-
+
+https://techvblogs.com/blog/how-to-reset-mysql-root-password-ubuntu
+
+To stop mysql starting from safe mode:- 
+systemctl edit mysql
+Remove -skip-grant-tables line
+systemctl daemon-reload
+
+Pmo root - ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'R8hF9@8xnW7q^';
